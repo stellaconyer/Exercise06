@@ -39,10 +39,12 @@ for word in text:
 #     print value
 
 count = {}
-for key, value in wordcount_dict.iteritems():
-    count[value] = wordcount_dict.get(value, [])
-    count[value].append(key)
-print count   
+for key in wordcount_dict:
+    count[wordcount_dict[key]] = count.get(wordcount_dict[key], [])
+    count[wordcount_dict[key]].append(key)
+
+for key in sorted(count.keys()):
+    print key, count[key]
 
 
 # list_of_words=[]
